@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Boutique Page",
-    "slug": "boutique-page",
+    "name": "Boutique Page Tailor",
+    "slug": "boutique-page-tailor",
     "version": "1.0.0",
     "sdkVersion": "52.0.0",
     "orientation": "portrait",
@@ -15,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.boutique.app",
+      "bundleIdentifier": "com.boutique.tailor",
       "infoPlist": {
         "NSAppTransportSecurity": {
           "NSAllowsArbitraryLoads": true
@@ -27,7 +27,7 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#0a2a2a"
       },
-      "package": "com.boutique.app",
+      "package": "com.boutique.tailor",
       "versionCode": 1,
       "compileSdkVersion": 35,
       "targetSdkVersion": 35,
@@ -40,7 +40,7 @@
     "web": {
       "favicon": "./assets/icon.png"
     },
-    "scheme": "boutique",
+    "scheme": "boutique-tailor",
     "plugins": [
       "expo-router",
       [
@@ -60,9 +60,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "87147d4c-889d-4bcb-b296-a408e0d9dab5"
+        "projectId": "ee29461b-3c6b-41de-bc6d-4440a852876b"
       }
     },
-    "owner": "rishu_pelocal"
+    "owner": "ond_techsol"
   }
 }
