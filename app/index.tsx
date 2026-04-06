@@ -5,17 +5,16 @@ import {
   StyleSheet,
   Animated,
   Easing,
-  Dimensions,
   Platform,
   StatusBar,
   BackHandler,
   Alert,
-  Image,
   TouchableOpacity,
   useWindowDimensions,
 } from "react-native";
 import { WebView } from 'react-native-webview';
 import NetInfo from "@react-native-community/netinfo";
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 // ── Change this URL any time ──────────────────────────────────
 const WEBSITE_URL = 'https://tailor.boutiquepage.in';
@@ -150,6 +149,7 @@ const createStyles = (width: number, height: number) =>
   });
 export default function HomeScreen() {
   const { width, height } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
   const [splashDone, setSplashDone] = useState(false);
   const webViewRef = useRef<any>(null);
   const canGoBack = useRef(false);
@@ -278,11 +278,21 @@ export default function HomeScreen() {
   const s = createStyles(width, height);
 
   return (
-    <View style={s.root}>
+    <View
+      style={[
+        s.root,
+        {
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        },
+      ]}
+    >
       <StatusBar
         barStyle="light-content"
         backgroundColor={C.bg}
-        translucent={false}
+        translucent={true}
       />
 
       {/* ── WebView — ALWAYS rendered, loads in background ─── */}
